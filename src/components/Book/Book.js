@@ -33,7 +33,7 @@ import Bookings from '../Bookings/Bookings';
             };
             const handleBooking = () => {
               const newBooking = {...loggedInUser, ...selectedDate};
-              fetch('http://localhost:5000/addBooking',{
+              fetch('http://localhost:4000/addBooking',{
                   method:'POST',
                   headers: {'Content-type': 'application/json'},
                   body:JSON.stringify(newBooking)

@@ -44,7 +44,7 @@ export default function Room({room}){
     const handleBook = (bedType) => {
         history.push(`/book/${bedType}`);
     }
-    console.log(room.bedType)
+    // console.log(room.bedType)
   return (
     <Card className={classes.root}>
       <CardHeader
