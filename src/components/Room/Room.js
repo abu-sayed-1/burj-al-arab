@@ -44,6 +44,7 @@ export default function Room({room}){
     const handleBook = (bedType) => {
         history.push(`/book/${bedType}`);
     }
+    console.log(room.bedType)
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -60,7 +61,7 @@ export default function Room({room}){
         image={room.imgUrl}
         title="Paella dish"
       />
-      <img src={`/images/${room.bedType}.png`} alt=""/>
+      <img src={`../../images/${room.bedType}.png`} alt=""/>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {room.description}
