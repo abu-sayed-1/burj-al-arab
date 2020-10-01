@@ -29,6 +29,7 @@ const Login = () => {
             }
             setLoggedInUser(isSignedInUser)
             storeAuthToken();
+  // token ta ei khane call korchi zeno login hobar por token e tar info diye de 
             verifyEmail()
             history.replace(from)
             // console.log(result)
@@ -56,8 +57,11 @@ const Login = () => {
     const storeAuthToken = () => {
       firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
       .then(function(idToken) {
-         console.log(idToken);
-        // Send token to your backend via HTTPS
+        sessionStorage.setItem('token', idToken)
+  //ei code diye ^^ amra vrefication idToken sessionStorage padai diche
+  //kon pathai chi zeno amra ze kono components theke idToken read korte pari
+    
+  // Send token to your backend via HTTPS
       }).catch(function(error) {
         // Handle error
       });
